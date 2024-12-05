@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 
 import ShopItem from "../../components/productItems/shopItem";
 import "./style.css";
@@ -21,9 +21,7 @@ const Home = () => {
   return (
     <div className="viewContainer">
       <div className="container">
-
         <div className="filter">
-
           <div className="category-filter">
             <div
               className={category === "All" ? "active" : "all"}
@@ -56,19 +54,16 @@ const Home = () => {
             >
               electronics
             </div>
-
           </div>
 
           <div className="price-Filter">
-
-          <button
-            className="sort-price"
-            onClick={() => setSortOrder(sortOrder === "asc" ? "desc" : "asc")}
-          >
-            Sort by Price ({sortOrder === "asc" ? "Ascending" : "Descending"})
-          </button>
+            <button
+              className="sort-price"
+              onClick={() => setSortOrder(sortOrder === "asc" ? "desc" : "asc")}
+            >
+              Sort by Price ({sortOrder === "asc" ? "Ascending" : "Descending"})
+            </button>
           </div>
-
         </div>
 
         <div className="Items">

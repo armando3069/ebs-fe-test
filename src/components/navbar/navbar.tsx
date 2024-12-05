@@ -1,4 +1,4 @@
-import React from 'react'
+
 import logo from '../../assets/img/logo.png'
 import { HiOutlineShoppingBag } from "react-icons/hi";
 import { useShoppingCart } from '../../context/shopContext';

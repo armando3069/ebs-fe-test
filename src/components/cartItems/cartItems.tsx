@@ -10,7 +10,6 @@ type CartItemProps = {
 
 const CartItem = ({ id, quantity }: CartItemProps) => {
   const {
-    getItemQuantity,
     increaseCartQuantity,
     decreaseCartQuantity,
     removeFromCart,
