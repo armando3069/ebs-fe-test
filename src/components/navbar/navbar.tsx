@@ -15,19 +15,19 @@ const Navbar = () => {
         <div className="left">ebs-fe-test</div>
 
         <div className="middle">
+          <Link to="/">
           <img src={logo} alt="" />
+          </Link>
         </div>
 
         <div className="right" >
-            <p className='auth'>LOGIN/SIGNUP</p>
-
-
+            {/* <p className='auth'>LOGIN/SIGNUP</p> */}
+              <Link to="/cart">
             <div className="shopContainer">
-
-              <HiOutlineShoppingBag fontSize={32} />
+              <HiOutlineShoppingBag color='black' fontSize={32} />
               <div className="quantityShop">{cartQuantity}</div>
-
             </div>
+              </Link>;
 
         </div>
     </div>
