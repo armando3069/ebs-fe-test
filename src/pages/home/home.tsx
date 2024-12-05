@@ -1,25 +1,22 @@
-import React, { useContext, useState } from "react";
+import React, { useState } from "react";
 
-import ShopItem from "../../components/items/shopItem";
+import ShopItem from "../../components/productItems/shopItem";
 import "./style.css";
 import { useShoppingCart } from "../../context/shopContext";
-
-
 
 const Home = () => {
   const { products } = useShoppingCart();
   const [category, setCategory] = useState("All");
-  const [sortOrder, setSortOrder] = useState<'asc' | 'desc'>('asc');
-
+  const [sortOrder, setSortOrder] = useState<"asc" | "desc">("asc");
 
   const FillterCategory =
     category === "All"
       ? products
       : products.filter((item) => item.category === category);
 
-      const sortedProducts = [...FillterCategory].sort((a, b) => {
-        return sortOrder === 'asc' ? a.price - b.price : b.price - a.price;
-      });
+  const sortedProducts = [...FillterCategory].sort((a, b) => {
+    return sortOrder === "asc" ? a.price - b.price : b.price - a.price;
+  });
 
   return (
     <div className="viewContainer">
@@ -27,6 +24,7 @@ const Home = () => {
 
         <div className="filter">
 
+          <div className="category-filter">
             <div
               className={category === "All" ? "active" : "all"}
               onClick={() => setCategory("All")}
@@ -51,6 +49,7 @@ const Home = () => {
             >
               men's clothing
             </div>
+
             <div
               className={category === "electronics" ? "active" : "all"}
               onClick={() => setCategory("electronics")}
@@ -58,22 +57,31 @@ const Home = () => {
               electronics
             </div>
 
-            <button  onClick={() => setSortOrder(sortOrder === 'asc' ? 'desc' : 'asc')}>
-                   Sort by Price ({sortOrder === 'asc' ? 'Ascending' : 'Descending'})
-            </button>
+          </div>
+
+          <div className="price-Filter">
+
+          <button
+            className="sort-price"
+            onClick={() => setSortOrder(sortOrder === "asc" ? "desc" : "asc")}
+          >
+            Sort by Price ({sortOrder === "asc" ? "Ascending" : "Descending"})
+          </button>
+          </div>
+
         </div>
 
         <div className="Items">
-        {sortedProducts.map((product) => (
-          <ShopItem
-            key={product.id}
-            id={product.id}
-            title={product.title}
-            price={product.price}
-            image={product.image}
-            category={product.category}
-          />
-        ))}
+          {sortedProducts.map((product) => (
+            <ShopItem
+              key={product.id}
+              id={product.id}
+              title={product.title}
+              price={product.price}
+              image={product.image}
+              category={product.category}
+            />
+          ))}
         </div>
       </div>
     </div>
