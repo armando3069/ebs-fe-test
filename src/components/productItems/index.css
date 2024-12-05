@@ -1,0 +1,74 @@
+.card-title {
+  height: 50px; 
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2; 
+  -webkit-box-orient: vertical;
+  margin: 0;
+  text-align: center; 
+}
+
+/* se poate de aduagat  */
+
+.card-item {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; 
+    border: 1px solid black;
+    padding: 10px;
+    width: 200px;
+    height: 450px; 
+    background-color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    /* border-radius: 8px; */
+  }
+  
+  .card-image {
+    width: 100%;
+    height: 200px;
+    object-fit: contain;
+    margin-bottom: 10px;
+  }
+  
+  .add {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-top: auto; 
+    margin-bottom: 10px;
+  }
+  
+  .btn {
+    background-color: transparent;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+  }
+  
+  .quantity {
+    font-size: 1rem;
+    margin: 0 10px;
+  }
+  
+  h4, p {
+    margin: 5px 0;
+    text-align: center;
+  }
+
+  .add-to-cart-btn {
+    background-color: transparent;
+    padding: 10px 20px;
+    border: none;
+    border: 1.3px solid black;
+    cursor: pointer;
+    font-size: 1rem;
+  }
+
+  .quantity-controls {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  
