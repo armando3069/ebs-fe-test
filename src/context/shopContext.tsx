@@ -40,6 +40,7 @@ type CartContext = {
   cartQuantity: number;
   cartItems: CartItem[];
   products: Product[];
+  clearCart:()=>void;
 };
 
  const ShopCartContext = createContext({} as CartContext);
@@ -110,6 +111,9 @@ export function CartProvider({ children }: CartProviderProps) {
       return currItems.filter((item) => item.id !== id);
     });
   }
+  function clearCart() {
+    setCartItems([]);
+  }
 
   return (
     <ShopCartContext.Provider
@@ -121,6 +125,7 @@ export function CartProvider({ children }: CartProviderProps) {
         cartItems,
         products,
         cartQuantity,
+        clearCart
       }}
     >
       {children}
