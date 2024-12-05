@@ -1,49 +1,14 @@
-import {
-  createContext,
-  ReactNode,
-  useContext,
-  useState,
-  useEffect,
-} from "react";
+import { createContext, useContext, useState, useEffect } from "react";
+
+// Types and Interface
+import { Product } from "../utils/interface";
+import { CartItem, CartProviderProps, CartContext } from "../utils/types";
+
+// Local Storage Hooks and Fetch API
 import { fetchProducts } from "../API/fetch";
-
 import { useLocalStorage } from "../hooks/useLocalStorage";
-// types
-type CartProviderProps = {
-  children: ReactNode;
-};
 
-type CartItem = {
-
-  id: number;
-  quantity: number;
-};
-
-interface Product {
-  id: number;
-  title: string;
-  price: number;
-  description: string;
-  category: string;
-  image: string;
-  rating: {
-    rate: number;
-    count: number;
-  };
-}
-
-type CartContext = {
-  getItemQuantity: (id: number) => number;
-  increaseCartQuantity: (id: number) => void;
-  decreaseCartQuantity: (id: number) => void;
-  removeFromCart: (id: number) => void;
-  cartQuantity: number;
-  cartItems: CartItem[];
-  products: Product[];
-  clearCart:()=>void;
-};
-
- const ShopCartContext = createContext({} as CartContext);
+const ShopCartContext = createContext({} as CartContext);
 
 export function useShoppingCart() {
   return useContext(ShopCartContext);
@@ -125,7 +90,7 @@ export function CartProvider({ children }: CartProviderProps) {
         cartItems,
         products,
         cartQuantity,
-        clearCart
+        clearCart,
       }}
     >
       {children}
