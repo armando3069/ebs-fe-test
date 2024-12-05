@@ -40,4 +40,13 @@
 }
 .auth{
     font-size: .8rem;
+    font-family: "Lato", sans-serif;
+    color: #ccc;
+}
+
+@media (max-width: 490px) {
+    .left{
+        display: none;
+    }
+
 }
