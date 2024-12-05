@@ -31,7 +31,7 @@ Installation
     1.	Clone the repository:
 
 git clone https://github.com/armando3069/ebs-fe-test.git
-cd shopping-cart-app
+cd ebs-fe-test
 
     2.	Install dependencies:
 
@@ -86,19 +86,6 @@ npm test
 # or
 
 yarn test
-
-Folder Structure
-
-src/
-│
-├── API/ # API fetch logic
-├── components/ # Reusable components (Cart, ProductList, etc.)
-├── context/ # Context API for global state
-├── hooks/ # Custom hooks (e.g., useLocalStorage)
-├── pages/ # Main application pages
-├── styles/ # CSS/SCSS files
-├── utils/ # TypeScript types and interfaces
-└── App.tsx # Main application component
 
 License
 
