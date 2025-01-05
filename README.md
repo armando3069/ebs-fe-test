@@ -35,21 +35,14 @@ cd ebs-fe-test
 
     2.	Install dependencies:
 
-npm install
-
-# or
-
-yarn install
+- npm install
 
 Running the Application
 
 To start the development server:
 
-npm start
 
-# or
-
-yarn start
+- npm start
 
 The application will be accessible at http://localhost:5173/.
 
@@ -59,33 +52,6 @@ To build the project for production:
 
 npm run build
 
-# or
-
-yarn build
-
-The output will be located in the build folder.
-
-Linting and Formatting
-
-To check and fix code style issues:
-
-npm run lint
-npm run format
-
-# or
-
-yarn lint
-yarn format
-
-Testing
-
-Run the tests using React Testing Library and Jest:
-
-npm test
-
-# or
-
-yarn test
 
 License
 
